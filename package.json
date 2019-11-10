@@ -1,0 +1,24 @@
+{
+  "name": "eventserver",
+  "version": "1.0.0",
+  "description": "Socket backend to slate editor",
+  "main": "server.js",
+  "license": "MIT",
+  "engines": {
+    "node": "12.x",
+    "npm": "6.x"
+  },
+  "dependencies": {
+    "@slate-collaborative/backend": "^0.0.3",
+    "express": "^4.17.1",
+    "typescript": "3.6.3"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "start-dev": "nodemon --watch ./ --inspect server.js",
+    "build": "cross-env NODE_ENV=production && react-scripts build"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}

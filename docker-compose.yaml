@@ -1,0 +1,19 @@
+version: '3'
+
+networks:
+  frontend:
+    driver: ${NETWORKS_DRIVER}
+
+services:
+    socketserver:
+      container_name: socketserver
+      image: node:12.10-alpine
+      command: yarn start-dev
+      working_dir: /app
+      volumes:
+        - ./:/app
+      ports:
+        - "${SOCKETPORT}:3000"
+      tty: true
+      networks:
+        - frontend
